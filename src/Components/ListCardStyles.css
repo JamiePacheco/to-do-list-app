@@ -1,0 +1,134 @@
+.list-card {
+    min-height: 225px;
+    max-height: 550px;
+    width: 350px;
+    background-color: white;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.card--header-container{ 
+    width: 95%;
+    margin: 25px 10px 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card--title {
+    height: 30px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    border: none;
+}
+
+.no-outline:focus {
+    outline: none;
+}
+
+.card--edit-button {
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: inherit;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.card--edit-button:hover {
+    background-color: lightgray;
+}
+
+.card--edit-button > i {
+    width: 100%;
+}
+
+.card--new-task-container {
+    width: 95%;
+    margin: 0 10px 30px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card--new-task-input {
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid rgb(0, 5, 74);
+    height: 30px;
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card--add-task-button {
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: inherit;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.card--add-task-button:hover {
+    background-color: lightgray;
+}
+
+.card--add-task-button > i {
+    width: 100%;
+}
+
+.card--task-list-container {
+    width: 100%;
+    min-height: 100px;
+    max-height: 550px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.card--task-empty-title {
+    text-align: center;
+    color: lightgray;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    user-select: none;
+}
+
+.card--task-list {
+    margin: 0;
+    width: 100%;
+    min-height: 100px;
+    max-height: 375px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    list-style: none;
+    padding: 0;
+}
+
+.card--task-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.card--task-list::-webkit-scrollbar-track {
+    background-color: white; 
+
+}
+
+.card--task-list::-webkit-scrollbar-thumb {
+    background-color:rgb(0, 5, 74);
+    border-radius: 10px;
+}

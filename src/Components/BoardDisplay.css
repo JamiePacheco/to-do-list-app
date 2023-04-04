@@ -1,0 +1,22 @@
+.task-board {
+    background: rgb(202, 202, 202);
+    width: 100%;
+    height: 100%;
+    padding: 100px 0 50px 50px;
+}
+
+.task-board-title {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+
+    border: none;
+    background: inherit;
+
+    margin: 0;
+}
+
+.task-board-title:focus  {
+    outline: none;
+}
+  

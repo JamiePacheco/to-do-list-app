@@ -1,25 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import BoardDisplay from './Components/BoardDisplay';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className = "main">
+      <header className = "main-header"> 
+        <h1 className = "main-header-title"> To-Do-List </h1>
       </header>
+
+      <div className = "main-content">
+        <BoardDisplay> </BoardDisplay>        
+      </div>
+
     </div>
-  );
+  )
 }
 
-export default App;
