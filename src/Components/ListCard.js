@@ -24,6 +24,7 @@ export default function ListCard(props) {
                 }
             })
         })
+
         console.log(listTasks);
     }
 
@@ -35,7 +36,6 @@ export default function ListCard(props) {
                 }
             })
         })
-        console.log(listTasks)
     }
 
     function addTask() {
@@ -47,8 +47,6 @@ export default function ListCard(props) {
         }
         
         setListTasks(prevListTasks => [...prevListTasks, newTask])
-
-        console.log(listTasks);
     }
 
     function enterNewTask(event) {

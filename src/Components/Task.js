@@ -45,10 +45,9 @@ export default function Task({title, id, changeFunc, deleteFunc, description = "
 
         if (event.key === "Enter") {
             setDescription(newTaskDescription);
-
             let changeData = {
                 id : id,
-                description: taskDescription,
+                description: newTaskDescription,
                 changed : "description"
             }
 
