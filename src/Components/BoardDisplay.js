@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import BoardDisplayStyles from "./BoardDisplay.css";
 
 import ListDisplay from "./ListDisplay";
 
-export default function BoardDisplay({board}) {
+import { useBoard, useBoardUpdate } from "./BoardContext";
 
-    const [currentBoard, setBoard] = useState(board);
+export default function BoardDisplay() {
 
-    console.log(`current board ${JSON.stringify(currentBoard)}`)
+    const board = useBoard();
 
     return (
         <div className = "task-board"> 
-            <input className="task-board-title" defaultValue= {currentBoard.title}/> 
-            <ListDisplay cards = {currentBoard.cards} />
+            <input className="task-board-title" value = {board.title} /> 
+            <ListDisplay cards = {board.cards}/>
         </div>
     )
 }

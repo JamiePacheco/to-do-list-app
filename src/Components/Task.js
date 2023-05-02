@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import ReactStyles from "./Task.css"
 import userEvent from "@testing-library/user-event";
@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 export default function Task({title, id, changeFunc, deleteFunc, description = "Task Description", active = true}) {
 
     const [taskTitle, setTaskTitle] = useState(title);
-    const [focused, setFocused] = useState(false);
+    const [taskFocused, setFocused] = useState(false);
     const [taskActive, setActive] = useState (active);
     const [taskDescription, setDescription] = useState(description)
 
@@ -37,7 +37,6 @@ export default function Task({title, id, changeFunc, deleteFunc, description = "
             activated: !taskActive,
             changed : "active"
         }
-        console.log(changeData);
         changeFunc(changeData)
     }
 
@@ -53,21 +52,23 @@ export default function Task({title, id, changeFunc, deleteFunc, description = "
 
             changeFunc(changeData);
 
-            event.target.focused = false;
+            event.target.taskFocused = false;
         }
     }
 
-
-    function changeFocus() {
-        if (taskActive) { 
+    function changeFocus(e) {
+        e.stopPropagation();
+        if (!taskFocused && taskActive) {
             setFocused(true);
+        } else {
+            setFocused(false);
         }
     }
 
     return (
         <li 
-        className = {"task " + (focused ? "task--expanded" : "task--contracted") + (taskActive ? "" : " task--checked")} 
-        onClick={() => changeFocus()}
+        className = {"task " + (taskFocused ? "task--expanded" : "task--contracted") + (taskActive ? "" : " task--checked")} 
+        onClick={(e) => {changeFocus(e)}}
         >   
             <div className="task--contracted-content">
                 <input 
@@ -80,17 +81,19 @@ export default function Task({title, id, changeFunc, deleteFunc, description = "
                 className = {"task--name-input " + (taskActive ? "" : "task--checked")}   
                 type = "text" 
                 defaultValue = {taskTitle}
-                 onChange={event => setNewTaskTitle(event.target.value)}
-                 onKeyDown={event => changeTitle(event)}
-                 readOnly = {!taskActive}
+                onChange={event => setNewTaskTitle(event.target.value)}
+                onKeyDown={event => changeTitle(event)}
+                onClick={(e) => taskFocused && e.stopPropagation()}
+                readOnly = {!taskActive}
                  />  
             </div>
             
             {
-               focused 
+               taskFocused 
                &&
                 <div className = "task--expanded-content" onFocus={() => setFocused(true)}>
                     <textarea 
+                        onClick={(e) => {e.stopPropagation()}}
                         className = "task--description-textarea" 
                         defaultValue={description} 
                         placeholder="Task Description" 

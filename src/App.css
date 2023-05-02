@@ -77,6 +77,24 @@
   white-space: inherit;
 }
 
+.buttons-list--new-board-input {
+  width: 90%;
+  height: 40px;
+  padding-left: 20px;
+
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+
+  background: inherit;
+  border: none;
+  color: white;
+}
+
+.buttons-list--new-board-input:focus {
+  outline: none;
+}
+
 .buttons-list--button {
   width: 100%;
   height: 50px;

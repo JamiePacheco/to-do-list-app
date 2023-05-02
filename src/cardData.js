@@ -8,6 +8,20 @@ export default [
             {
                 id : 1,
                 title : "Main List",
+                deletable : false,
+                tasks : [
+                    {
+                        id : 1,
+                        title: "Do Taxes",
+                        description: "File my taxes",
+                        active: true
+                    }
+                ]
+            }, 
+            {
+                id : 2,
+                title : "Chores",
+                deletable: true,
                 tasks : []
             }
         ]
@@ -19,7 +33,20 @@ export default [
         cards : [
             {
                 id : 1,
-                title : "Math Assignments",
+                title : "Main List",
+                deletable : false,
+                tasks : []
+            }, 
+            {
+                id : 2,
+                title : "English Assignments",
+                deletable: true,
+                tasks : []
+            },
+            {
+                id : 3,
+                title : "Math Assigments",
+                deletable: true,
                 tasks : []
             }
         ]
